@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --border: 220 13% 91%;
+    --primary: 135 100% 45%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 150 95% 50%;
+    --secondary-foreground: 222 47% 6%;
+    --muted-foreground: 215 16% 47%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 40% 9%;
+    --border: 217 33% 18%;
+    --primary: 135 100% 55%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 150 100% 60%;
+    --secondary-foreground: 222 47% 6%;
+    --muted-foreground: 215 20% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl dark:bg-white/5;
+  }
+
+  .glass-card {
+    background: hsl(var(--card) / 0.7);
+    @apply border border-border backdrop-blur-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .glow-primary {
+    box-shadow:
+      0 0 20px -2px hsl(var(--primary) / 0.7),
+      0 0 60px -6px hsl(var(--primary) / 0.5);
+  }
+
+  .text-glow {
+    text-shadow:
+      0 0 8px hsl(var(--primary) / 0.8),
+      0 0 24px hsl(var(--primary) / 0.5);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
+}
