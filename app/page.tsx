@@ -22,7 +22,7 @@ export default function Home() {
         <WhyUs />
         <Industries />
         <Roadmap />
-        <Team />
+        {/* <Team /> */}
         <ContactCta />
       </main>
       <Footer />
