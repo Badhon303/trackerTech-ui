@@ -289,16 +289,16 @@ export const MANAGEMENT: TeamMember[] = [
 
 export const TEAM: TeamMember[] = [
   {
-    name: "Mir Javed Jahanger",
-    role: "Project Team Lead",
-    image: "/team/mir-javed-jahanger.jpeg",
-    initials: "MJ",
-  },
-  {
     name: "Md. Minul Alam",
     role: "Project Manager",
     image: "/team/md-minul-alam.jpeg",
     initials: "MA",
+  },
+  {
+    name: "Mir Javed Jahanger",
+    role: "Project Team Lead",
+    image: "/team/mir-javed-jahanger.jpeg",
+    initials: "MJ",
   },
 ];
 
