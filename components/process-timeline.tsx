@@ -64,8 +64,8 @@ export function ProcessTimeline() {
       <div className="container">
         <SectionHeading
           eyebrow="How It Works"
-          title="Blockchain-Powered Plastic Bottle Tracking"
-          description="Every batch is recorded on-chain — from supplier intake to final processing — for verifiable, end-to-end traceability."
+          title="From collection to compliance - fully verified"
+          description="Five connected steps turn an uncertain stream into a trusted chain of custody, from the first camera capture to EPR-ready reporting."
         />
 
         <div ref={containerRef} className="relative mt-16 sm:mt-20">

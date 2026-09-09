@@ -15,9 +15,9 @@ export function Roadmap() {
       <Orb className="right-0 top-1/4 h-80 w-80" color="bg-primary/12" />
       <div className="container">
         <SectionHeading
-          eyebrow="Our Journey"
-          title="Roadmap"
-          description="Stage names are placeholders — the client will fill in real dates and milestones before launch."
+          eyebrow="The traceability journey"
+          title="A clearer path from waste to value"
+          description="The TrackerTech model connects four moments that make circular-plastics data more useful, more trusted, and easier to act on."
         />
 
         <div className="relative mt-16">
@@ -67,13 +67,10 @@ export function Roadmap() {
                         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                           {item.description}
                         </p>
-                        <button
-                          type="button"
-                          className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-secondary"
-                        >
-                          Learn more
+                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                          {i < ROADMAP.length - 1 ? "Leads to the next handoff" : "Ready for better reporting"}
                           <ArrowUpRight className="h-4 w-4" />
-                        </button>
+                        </span>
                       </div>
                     </Card>
                   </motion.div>

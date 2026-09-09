@@ -10,9 +10,9 @@ export function Industries() {
     <section id="industries" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="container">
         <SectionHeading
-          eyebrow="Industries"
-          title="Industries We Serve"
-          description="Our systems adapt to the realities of demanding industrial environments."
+          eyebrow="Built for the real supply chain"
+          title="Every actor gets a clearer view"
+          description="From collection shops to EPR reporting teams, TrackerTech gives each handoff the context it needs."
         />
 
         <motion.div

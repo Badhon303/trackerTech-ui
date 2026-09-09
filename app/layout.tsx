@@ -21,8 +21,8 @@ const siteUrl = "https://trackertech.io";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${SITE.legalName} — Engineering Intelligence for Industry`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.legalName} - Next-Gen Supply Chain Traceability`,
+    template: `%s - ${SITE.name}`,
   },
   description: SITE.tagline,
   keywords: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: `${SITE.legalName} — Engineering Intelligence for Industry`,
+    title: `${SITE.legalName} - Next-Gen Supply Chain Traceability`,
     description: SITE.tagline,
     siteName: SITE.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.legalName} — Engineering Intelligence for Industry`,
+    title: `${SITE.legalName} - Next-Gen Supply Chain Traceability`,
     description: SITE.tagline,
   },
 };

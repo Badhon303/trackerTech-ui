@@ -70,9 +70,9 @@ export function WhyUs() {
       <Orb className="left-0 top-1/3 h-80 w-80" color="bg-secondary/15" />
       <div className="container">
         <SectionHeading
-          eyebrow="Why Tracker Tech"
-          title="Built on Four Commitments"
-          description="Our value proposition runs through everything we engineer."
+          eyebrow="The TrackerTech difference"
+          title="One system. Four measurable outcomes."
+          description="Better decisions start with better evidence - and better evidence starts at the point where material changes hands."
         />
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">
@@ -123,7 +123,7 @@ export function WhyUs() {
               ))}
             </ul>
             <p className="mt-4 text-center text-[11px] text-muted-foreground">
-              Chart is illustrative only.
+              Designed around the outcomes that matter on the ground.
             </p>
           </motion.div>
         </div>

@@ -15,8 +15,8 @@ export function Solutions() {
       <div className="container">
         <SectionHeading
           eyebrow="Solutions"
-          title="Flagship Solutions"
-          description="Production-ready systems that pair on-chain traceability with real-time computer vision."
+          title="Intelligence for every handoff"
+          description="TrackerVision helps collection networks, recyclers, manufacturers, and brands move from assumptions to evidence."
         />
 
         <div className="mt-16 space-y-24">

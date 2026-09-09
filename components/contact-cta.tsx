@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { CheckCircle2, Mail, Phone, Send } from "lucide-react";
+import { CheckCircle2, Globe2, Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Orb } from "@/components/ui/orb";
 import { SITE } from "@/lib/content";
@@ -72,14 +72,22 @@ export function ContactCta() {
                   </span>
                   {SITE.email}
                 </a>
+                <div className="flex items-start gap-3 text-sm">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border bg-card/60 text-primary">
+                    <MapPin className="h-4 w-4" />
+                  </span>
+                  <span className="pt-2 leading-relaxed text-muted-foreground">{SITE.address}</span>
+                </div>
                 <a
-                  href={`tel:${SITE.phone.replace(/[^+\d]/g, "")}`}
+                  href={SITE.website}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-3 text-sm transition-colors hover:text-primary"
                 >
                   <span className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-card/60 text-primary">
-                    <Phone className="h-4 w-4" />
+                    <Globe2 className="h-4 w-4" />
                   </span>
-                  {SITE.phone}
+                  trackertechltd.com
                 </a>
               </div>
             </motion.div>

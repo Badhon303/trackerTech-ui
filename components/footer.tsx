@@ -27,6 +27,9 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               {SITE.tagline}
             </p>
+            <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground/80">
+              {SITE.address}
+            </p>
             <div className="mt-6 flex gap-3">
               <a
                 href={SITE.social.linkedin}
@@ -91,7 +94,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
+            Copyright {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>
           <p>Engineering intelligence for industry.</p>
         </div>

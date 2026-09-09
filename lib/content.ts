@@ -1,37 +1,33 @@
 /**
- * Single source of truth for all site copy and repeatable data.
- * Edit values here to update the site — components consume these typed arrays.
- *
- * NOTE: Roadmap dates, team bios, and exact stat numbers are PLACEHOLDERS.
- * Swap in real values before launch.
+ * Single source of truth for TrackerTech's public website content.
+ * Company and product language is based on the supplied business material.
  */
 import type { LucideIcon } from "lucide-react";
 import {
-  Activity,
   BadgeCheck,
   Boxes,
   Brain,
   Camera,
-  Cpu,
+  CheckCircle2,
   Factory,
   Gauge,
   Leaf,
   Link2,
   Recycle,
-  ScanLine,
   ShieldCheck,
   ShoppingCart,
-  Sparkles,
   Truck,
 } from "lucide-react";
 
 export const SITE = {
-  name: "Tracker Tech",
-  legalName: "Tracker Tech Limited",
+  name: "TrackerTech",
+  legalName: "TrackerTech Limited",
   tagline:
-    "AI, blockchain, and computer-vision systems that bring transparency, efficiency, and sustainability to modern industry.",
-  email: "hello@trackertech.io",
-  phone: "+1 (555) 014-2025",
+    "Next-Gen Supply Chain Traceability for a transparent, efficient, and sustainable circular economy.",
+  email: "khadem.yusuf@trackertechltd.com",
+  website: "https://www.trackertechltd.com",
+  address:
+    "Level 8, South Breeze Center, House 5, Road 11, Block G, Banani, Dhaka 1213",
   social: {
     linkedin: "https://linkedin.com",
     github: "https://github.com",
@@ -46,20 +42,18 @@ export const NAV_LINKS: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Solutions", href: "#solutions" },
   { label: "How It Works", href: "#process" },
-  { label: "Roadmap", href: "#roadmap" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const HERO = {
-  eyebrow: "AI · Blockchain · Computer Vision · Automation",
-  headline: "Engineering Intelligence for the Industries That Move the World",
-  // Alternatives:
-  //  - "Intelligent Systems for Transparent, Efficient Industry"
-  //  - "Where AI Meets the Production Line"
+  eyebrow: "TrackerVision | AI Vision x Blockchain Truth",
+  headline: "What the camera sees,",
+  headlineAccent: "the chain never forgets.",
   subheading:
-    "Tracker Tech Limited builds AI, blockchain, and computer-vision systems that bring transparency, efficiency, and sustainability to modern industry.",
-  primaryCta: { label: "Explore Solutions", href: "#solutions" },
-  secondaryCta: { label: "See How It Works", href: "#process" },
+    "TrackerTech builds next-generation traceability systems for circular plastics - combining real-time computer vision, trusted human verification, and an immutable chain of custody.",
+  primaryCta: { label: "Explore TrackerVision", href: "#solutions" },
+  secondaryCta: { label: "See the chain", href: "#process" },
 } as const;
 
 export type Pillar = {
@@ -70,28 +64,28 @@ export type Pillar = {
 
 export const PILLARS: Pillar[] = [
   {
-    title: "Artificial Intelligence",
+    title: "AI Vision Capture",
     description:
-      "AI-powered detection and classification models that bring real-time intelligence to industrial processes.",
-    icon: Brain,
-  },
-  {
-    title: "Blockchain",
-    description:
-      "End-to-end tracking and traceability systems that record every step of a product's journey, immutably and transparently.",
-    icon: Link2,
-  },
-  {
-    title: "Computer Vision",
-    description:
-      "Camera-based recognition systems that identify and classify materials with high accuracy on live production lines.",
+      "Real-time cameras identify each bottle by material, brand, size, and empty weight as it moves through the line.",
     icon: Camera,
   },
   {
-    title: "Industrial Automation",
+    title: "Smart Analysis",
     description:
-      "Smart manufacturing solutions that streamline operations and reduce manual intervention.",
-    icon: Cpu,
+      "Recognition models cross-reference product data and flag unknown items for a fast, focused human confirmation.",
+    icon: Brain,
+  },
+  {
+    title: "Blockchain Ledger",
+    description:
+      "Every verified weight and custody event is recorded in a secure, transparent ledger that is built for trust.",
+    icon: Link2,
+  },
+  {
+    title: "EPR-Ready Data",
+    description:
+      "Verified collection, recycling, and material-category data is organized for accurate 2026 reporting.",
+    icon: Leaf,
   },
 ];
 
@@ -105,31 +99,38 @@ export type ProcessStep = {
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Supplier Intake",
+    title: "AI Vision Capture",
     description:
-      "Bottle batches are logged at the point of collection, creating the first immutable blockchain record.",
-    icon: Boxes,
+      "A live camera identifies each item and separates PET from non-PET, capturing brand, size, and empty weight.",
+    icon: Camera,
   },
   {
     number: "02",
-    title: "AI-Powered Sorting & Detection",
+    title: "Smart Analysis",
     description:
-      "Computer-vision cameras scan the conveyor belt in real time, classifying PET vs. Non-PET materials.",
-    icon: ScanLine,
+      "The system cross-references the product database and flags unfamiliar bottles for human confirmation.",
+    icon: Brain,
   },
   {
     number: "03",
-    title: "Resin & Flake Processing",
+    title: "Handle Unknowns",
     description:
-      "Sorted material moves to resin/flake processing; quantity and quality data are written on-chain.",
-    icon: Recycle,
+      "A single human confirmation teaches the system to remember the item permanently for future recognition.",
+    icon: CheckCircle2,
   },
   {
     number: "04",
-    title: "End-to-End Traceability",
+    title: "Blockchain Ledger",
     description:
-      "The full chain of custody — supplier to processor — is permanently and transparently recorded.",
-    icon: ShieldCheck,
+      "Gross weight, verified PET weight, and every handoff are secured in an immutable chain-of-custody record.",
+    icon: Link2,
+  },
+  {
+    number: "05",
+    title: "EPR-Ready Data",
+    description:
+      "Brand-wise collection, recycling, and material breakdowns are ready for audit-friendly EPR reporting.",
+    icon: Leaf,
   },
 ];
 
@@ -145,34 +146,34 @@ export type Solution = {
 
 export const SOLUTIONS: Solution[] = [
   {
-    id: "bottle-tracking",
-    eyebrow: "Solution A",
-    title: "Blockchain-Powered Bottle Tracking Platform",
+    id: "tracker-vision",
+    eyebrow: "01 / TrackerVision",
+    title: "See every bottle. Know exactly what you bought.",
     description:
-      "A blockchain ledger system that tracks plastic bottles from supplier intake through resin/flake processing, giving manufacturers and recyclers verifiable, end-to-end traceability.",
+      "TrackerVision turns a mixed stream into structured, usable data. The AI camera recognizes bottles in real time, separates PET from non-PET, and builds a richer material and brand picture without slowing the line.",
     features: [
-      "Immutable Ledger",
-      "Supplier-to-Processor Visibility",
-      "Custom Reporting Dashboard",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Blockchain traceability dashboard visualization",
-  },
-  {
-    id: "material-detection",
-    eyebrow: "Solution B",
-    title: "AI Camera-Based Material Detection",
-    description:
-      "A real-time computer-vision system installed on conveyor belts that identifies and classifies PET and Non-PET materials, improving sorting accuracy and cutting manual labor.",
-    features: [
-      "Real-Time Classification",
-      "High-Accuracy Detection Models",
-      "Drop-In Integration with Existing Lines",
+      "Real-time bottle recognition",
+      "PET, PP, PE, and multilayer classification",
+      "Brand, size, material, color, shape, and weight capture",
     ],
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Computer-vision camera analyzing materials on a production line",
+    imageAlt: "Industrial camera and production line representing AI vision",
+  },
+  {
+    id: "chain-of-custody",
+    eyebrow: "02 / Chain of Custody",
+    title: "Prove exactly what you recycled.",
+    description:
+      "From collection shop to recycling plant, every kilogram gets a verifiable journey. TrackerTech connects procurement, transport, unloading, recycling, and reporting in one trusted record.",
+    features: [
+      "Immutable custody records",
+      "Verified weight at every handoff",
+      "Audit-ready EPR collection and recycling data",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Digital network representing a blockchain chain of custody",
   },
 ];
 
@@ -180,37 +181,36 @@ export type ValueCard = {
   title: string;
   description: string;
   icon: LucideIcon;
-  /** illustrative share of focus for the decorative donut chart (percent) */
   share: number;
 };
 
 export const VALUES: ValueCard[] = [
   {
-    title: "Transparency",
+    title: "Pay for What You Get",
     description:
-      "Immutable records make every step of the journey verifiable for all stakeholders.",
+      "Replace mixed-material guesswork with verified PET weight and clearer purchasing decisions.",
     icon: BadgeCheck,
     share: 28,
   },
   {
-    title: "Efficiency",
+    title: "Lower Operational Costs",
     description:
-      "Automation and AI cut manual effort and accelerate throughput across the line.",
+      "Reduce manual sorting, material loss, and rework with intelligence at the point of action.",
     icon: Gauge,
     share: 26,
   },
   {
-    title: "Sustainability",
+    title: "EPR Compliance Ready",
     description:
-      "Better traceability drives higher recovery rates and a cleaner material loop.",
-    icon: Leaf,
+      "Turn trusted collection and recycling data into evidence that is easier to report and audit.",
+    icon: ShieldCheck,
     share: 24,
   },
   {
-    title: "Operational Excellence",
+    title: "A Cleaner Tomorrow",
     description:
-      "Reliable, data-driven systems engineered for demanding industrial environments.",
-    icon: Sparkles,
+      "Better data helps more material stay in the loop and turns waste into lasting value.",
+    icon: Recycle,
     share: 22,
   },
 ];
@@ -218,11 +218,11 @@ export const VALUES: ValueCard[] = [
 export type Industry = { title: string; icon: LucideIcon };
 
 export const INDUSTRIES: Industry[] = [
-  { title: "Plastics & Recycling", icon: Recycle },
+  { title: "Collection Networks", icon: Boxes },
+  { title: "Recycling Plants", icon: Recycle },
   { title: "Manufacturing", icon: Factory },
-  { title: "Supply Chain & Logistics", icon: Truck },
-  { title: "Retail & FMCG", icon: ShoppingCart },
-  { title: "Smart Factories", icon: Activity },
+  { title: "Brands & FMCG", icon: ShoppingCart },
+  { title: "Supply Chain", icon: Truck },
 ];
 
 export type RoadmapItem = {
@@ -233,83 +233,89 @@ export type RoadmapItem = {
   imageAlt: string;
 };
 
-// PLACEHOLDER milestones — replace with real dates/details before launch.
 export const ROADMAP: RoadmapItem[] = [
   {
-    phase: "Phase 01",
-    title: "Foundation & Core Team",
+    phase: "Capture",
+    title: "Make the invisible visible",
     description:
-      "Establishing the company, assembling the founding engineering team, and defining the core technology roadmap.",
+      "Camera-based recognition brings bottle, material, and brand data into the process in real time.",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Founding team collaborating in a workspace",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Industrial equipment in a smart factory",
   },
   {
-    phase: "Phase 02",
-    title: "Platform & Detection Model Development",
+    phase: "Verify",
+    title: "Teach the system what it does not know",
     description:
-      "Building the blockchain tracking platform and training the computer-vision material-detection models.",
+      "Human confirmation handles unknowns once, strengthening the recognition database for the next run.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Engineers reviewing data dashboards",
+    imageAlt: "Team reviewing a data dashboard",
   },
   {
-    phase: "Phase 03",
-    title: "Pilot Deployment with First Partners",
+    phase: "Trace",
+    title: "Secure every handoff",
     description:
-      "Deploying live pilots on partner production lines and validating accuracy and traceability in the field.",
+      "Verified weights and custody events move with the material from collection through recycling.",
     image:
       "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Industrial production line during a pilot deployment",
+    imageAlt: "Industrial production line",
   },
   {
-    phase: "Phase 04",
-    title: "Scaling & Market Expansion",
+    phase: "Report",
+    title: "Turn evidence into advantage",
     description:
-      "Scaling deployments across industries and expanding into new markets and verticals.",
+      "Brand-wise, material-category, collection, and recycling data is organized for EPR-ready reporting.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Modern facility representing market expansion",
+    imageAlt: "Modern building representing a sustainable future",
   },
 ];
 
 export type TeamMember = {
   name: string;
   role: string;
-  image: string;
+  image?: string;
+  initials: string;
 };
 
-// PLACEHOLDER team — populate with real members or omit from nav.
+export const MANAGEMENT: TeamMember[] = [
+  {
+    name: "Khadem Mahmud Yusuf",
+    role: "Managing Director",
+    image: "/team/khadem-mahmud-yusuf.jpg",
+    initials: "KY",
+  },
+  {
+    name: "Farhana Sekander",
+    role: "Director",
+    initials: "FS",
+  },
+  {
+    name: "Md. Minul Alam",
+    role: "Project Manager",
+    initials: "MA",
+  },
+];
+
 export const TEAM: TeamMember[] = [
   {
-    name: "A. Placeholder",
-    role: "Chief Executive Officer",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80",
+    name: "Mir Javed Jahanger",
+    role: "Project Team Lead",
+    image: "/team/mir-javed-jahanger.jpeg",
+    initials: "MJ",
   },
   {
-    name: "B. Placeholder",
-    role: "Chief Technology Officer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80",
-  },
-  {
-    name: "C. Placeholder",
-    role: "Head of Computer Vision",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80",
-  },
-  {
-    name: "D. Placeholder",
-    role: "Head of Blockchain",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=80",
+    name: "Badhon",
+    role: "Project Team",
+    image: "/team/badhon.jpeg",
+    initials: "B",
   },
 ];
 
 export const STATS = [
-  { value: 99, suffix: "%", label: "Detection accuracy target" },
-  { value: 4, suffix: "", label: "Core technology pillars" },
-  { value: 100, suffix: "%", label: "On-chain traceability" },
-  { value: 24, suffix: "/7", label: "Automated monitoring" },
+  { value: 5, suffix: " stages", label: "From capture to EPR-ready data" },
+  { value: 4, suffix: " materials", label: "PET, PP, PE, and multilayer" },
+  { value: 1, suffix: " ledger", label: "One source of chain-of-custody truth" },
+  { value: 2026, suffix: " EPR", label: "Bangladesh reporting direction" },
 ] as const;

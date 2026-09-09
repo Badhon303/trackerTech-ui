@@ -12,9 +12,9 @@ export function AboutPillars() {
       <Orb className="left-0 top-1/2 h-80 w-80" color="bg-primary/15" />
       <div className="container">
         <SectionHeading
-          eyebrow="About Us"
-          title="Four Technologies, One Mission"
-          description="We combine four deep-tech disciplines to bring transparency, efficiency, and sustainability to modern industry."
+          eyebrow="About TrackerTech"
+          title="From mixed materials to trusted data"
+          description="TrackerTech connects the physical world to a reliable digital record - making circular-plastics supply chains easier to see, verify, and improve."
         />
 
         <motion.div
