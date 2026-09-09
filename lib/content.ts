@@ -291,11 +291,6 @@ export const MANAGEMENT: TeamMember[] = [
     role: "Director",
     initials: "FS",
   },
-  {
-    name: "Md. Minul Alam",
-    role: "Project Manager",
-    initials: "MA",
-  },
 ];
 
 export const TEAM: TeamMember[] = [
@@ -306,10 +301,10 @@ export const TEAM: TeamMember[] = [
     initials: "MJ",
   },
   {
-    name: "Badhon",
-    role: "Project Team",
-    image: "/team/badhon.jpeg",
-    initials: "B",
+    name: "Md. Minul Alam",
+    role: "Project Manager",
+    image: "/team/md-minul-alam.jpeg",
+    initials: "MA",
   },
 ];
 
