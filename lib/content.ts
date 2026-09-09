@@ -156,9 +156,8 @@ export const SOLUTIONS: Solution[] = [
       "PET, PP, PE, and multilayer classification",
       "Brand, size, material, color, shape, and weight capture",
     ],
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Industrial camera and production line representing AI vision",
+    image: "/images/tracker-vision-ai.png",
+    imageAlt: "AI camera recognizing bottles on a recycling conveyor",
   },
   {
     id: "chain-of-custody",
@@ -171,9 +170,8 @@ export const SOLUTIONS: Solution[] = [
       "Verified weight at every handoff",
       "Audit-ready EPR collection and recycling data",
     ],
-    image:
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Digital network representing a blockchain chain of custody",
+    image: "/images/chain-of-custody.png",
+    imageAlt: "Recycled plastic supply chain connected by blockchain nodes",
   },
 ];
 
@@ -239,36 +237,32 @@ export const ROADMAP: RoadmapItem[] = [
     title: "Make the invisible visible",
     description:
       "Camera-based recognition brings bottle, material, and brand data into the process in real time.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Industrial equipment in a smart factory",
+    image: "/images/tracker-vision-ai.png",
+    imageAlt: "AI camera recognizing bottles and material on a conveyor",
   },
   {
     phase: "Verify",
     title: "Teach the system what it does not know",
     description:
       "Human confirmation handles unknowns once, strengthening the recognition database for the next run.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Team reviewing a data dashboard",
+    image: "/images/tracker-vision-ai.png",
+    imageAlt: "Computer vision system identifying recycled bottles",
   },
   {
     phase: "Trace",
     title: "Secure every handoff",
     description:
       "Verified weights and custody events move with the material from collection through recycling.",
-    image:
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Industrial production line",
+    image: "/images/chain-of-custody.png",
+    imageAlt: "Blockchain chain connecting collection, transport, and recycling",
   },
   {
     phase: "Report",
     title: "Turn evidence into advantage",
     description:
       "Brand-wise, material-category, collection, and recycling data is organized for EPR-ready reporting.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Modern building representing a sustainable future",
+    image: "/images/epr-ready.png",
+    imageAlt: "Recycled plastic materials in a circular EPR reporting loop",
   },
 ];
 
