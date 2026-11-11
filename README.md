@@ -42,6 +42,10 @@ lib/            content.ts (single source of truth), utils.ts, use-reduced-motio
 
 All copy and repeatable data (pillars, process steps, solutions, roadmap, team, stats) live in `lib/content.ts` as typed arrays. Edit there — no need to touch components.
 
+## Shared visitor counter
+
+The homepage visitor counter uses an Upstash Redis REST database so every visitor sees the same totals. Configure `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, and a private random `VISITOR_HASH_SECRET` in the deployment environment. These values are listed in `.env.example` for local setup. The API hashes the browser ID and public IP before storing them, and counts once when either identity is new. Daily totals reset at Bangladesh midnight; lifetime totals persist in Redis.
+
 ## Placeholders to Replace Before Launch
 
 - **Roadmap** (`ROADMAP` in `lib/content.ts`) — phase names/dates are placeholders.

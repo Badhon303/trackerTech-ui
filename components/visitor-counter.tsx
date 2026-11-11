@@ -8,24 +8,32 @@ type Counts = { today: number; lifetime: number };
 
 export function VisitorCounter() {
   const [counts, setCounts] = React.useState<Counts | null>(null);
+  const [unavailable, setUnavailable] = React.useState(false);
 
   React.useEffect(() => {
     let visitorId = window.localStorage.getItem("trackertech-visitor-id");
-    const isNewBrowser = !visitorId;
     if (!visitorId) {
       visitorId = window.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
       window.localStorage.setItem("trackertech-visitor-id", visitorId);
     }
-    const storedLifetime = Number(window.localStorage.getItem("trackertech-lifetime-visitors") ?? "0");
-    const lifetime = isNewBrowser ? storedLifetime + 1 : Math.max(1, storedLifetime);
-    window.localStorage.setItem("trackertech-lifetime-visitors", String(lifetime));
-    setCounts({ today: 1, lifetime });
+    fetch("/api/visitors", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ visitorId }),
+      cache: "no-store",
+    })
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Shared counter is not configured");
+        return response.json() as Promise<Counts>;
+      })
+      .then(setCounts)
+      .catch(() => setUnavailable(true));
   }, []);
 
   const display = (value: number | undefined) => value?.toLocaleString() ?? "—";
   const stats = [
-    { label: "Unique visitors today", value: display(counts?.today), icon: Activity, hint: "This browser · resets at midnight Bangladesh time" },
-    { label: "Unique visitors lifetime", value: display(counts?.lifetime), icon: UsersRound, hint: "This browser only" },
+    { label: "Unique visitors today", value: display(counts?.today), icon: Activity, hint: "Deduplicated by browser ID or public IP" },
+    { label: "Unique visitors lifetime", value: display(counts?.lifetime), icon: UsersRound, hint: "All-time total across visitors" },
   ];
 
   return (
@@ -44,7 +52,7 @@ export function VisitorCounter() {
         </div>
         <p className="mx-auto mt-5 flex max-w-4xl items-center justify-center gap-2 text-center text-xs text-muted-foreground">
           <Globe2 className="h-3.5 w-3.5 shrink-0" />
-          Browser-local estimate: other devices are not included. A random ID is stored on this device; no name or email is collected.
+          {unavailable ? "Shared visitor count is unavailable; check the Redis settings in the deployment environment." : "A random browser ID and a one-way hash of the public IP prevent repeat counts; no name or email is collected."}
         </p>
       </div>
     </section>
