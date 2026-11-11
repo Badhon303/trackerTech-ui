@@ -38,13 +38,40 @@ export const SITE = {
 export type NavLink = { label: string; href: string };
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "How It Works", href: "#process" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/about" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "How It Works", href: "/#process" },
+  { label: "Team", href: "/#team" },
+  { label: "Contact", href: "/#contact" },
 ];
+
+export const COMPANY_STORY = {
+  mission:
+    "Make plastic recovery more transparent and valuable by combining AI recognition with trusted, auditable records at every handoff.",
+  vision:
+    "A cleaner Bangladesh where every bottle can be identified, traced, and returned to the circular economy.",
+} as const;
+
+export const BROCHURES = [
+  {
+    number: "01",
+    title: "AI tracking for plastic waste",
+    subtitle: "Identify. Count. Trace.",
+    description:
+      "AI vision identifies PET and non-PET bottles, records verified weights, and follows recovered material from collection through recycling.",
+    points: ["Bottle-by-bottle recognition", "Verified, tamper-resistant records", "Audit-ready EPR data"],
+  },
+  {
+    number: "02",
+    title: "Digital traceability and reporting",
+    subtitle: "A clearer view of the recycling journey",
+    description:
+      "A connected dashboard brings recognition insights, recycling operations, procurement records, and reporting into one traceable workflow.",
+    points: ["AI recognition insights", "Live recycling operations", "Collection-to-audit workflow"],
+  },
+] as const;
 
 export const HERO = {
   eyebrow: "TrackerVision | AI Vision x Blockchain Truth",

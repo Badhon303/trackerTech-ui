@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Link
-              href="#home"
+              href="/#home"
               className="flex items-center gap-2 font-display text-lg font-bold"
             >
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground">

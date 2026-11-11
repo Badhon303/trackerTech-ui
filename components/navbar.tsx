@@ -38,7 +38,7 @@ export function Navbar() {
     >
       <nav className="container flex h-16 items-center justify-between md:h-20">
         <Link
-          href="#home"
+          href="/#home"
           className="flex items-center gap-2 font-display text-lg font-bold tracking-tight"
         >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground glow-primary">
@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="#contact" className="hidden sm:block">
+        <Link href="/#contact" className="hidden sm:block">
             <Button size="sm">Get in Touch</Button>
           </Link>
           <button
@@ -131,7 +131,7 @@ export function Navbar() {
                 }}
                 className="mt-6"
               >
-                <Link href="#contact" onClick={() => setOpen(false)}>
+                <Link href="/#contact" onClick={() => setOpen(false)}>
                   <Button size="lg" className="w-full">
                     Get in Touch
                   </Button>

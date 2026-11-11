@@ -20,7 +20,7 @@ function Portrait({ member, compact = false }: { member: TeamMember; compact?: b
           alt={`${member.name}, ${member.role}`}
           fill
           sizes={compact ? "112px" : "(max-width: 1024px) 100vw, 33vw"}
-          className="object-cover"
+          className={`object-cover ${member.role === "Managing Director" ? "object-[center_38%]" : compact ? "object-[center_32%]" : "object-center"}`}
         />
       ) : (
         <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.25),transparent_35%),linear-gradient(135deg,hsl(var(--card)),hsl(var(--primary)/0.08))]">

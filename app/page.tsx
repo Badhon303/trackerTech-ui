@@ -9,6 +9,10 @@ import { Roadmap } from "@/components/roadmap";
 import { Team } from "@/components/team";
 import { ContactCta } from "@/components/contact-cta";
 import { Footer } from "@/components/footer";
+import { Gallery } from "@/components/gallery";
+import { VisitorCounter } from "@/components/visitor-counter";
+import { MissionVision } from "@/components/mission-vision";
+import { BrochureOverview } from "@/components/brochure-overview";
 
 export default function Home() {
   return (
@@ -17,12 +21,16 @@ export default function Home() {
       <main>
         <Hero />
         <AboutPillars />
+        <section className="container pb-12 sm:pb-16"><MissionVision /></section>
         <ProcessTimeline />
         <Solutions />
         <WhyUs />
         <Industries />
         <Roadmap />
         <Team />
+        <Gallery />
+        <BrochureOverview compact />
+        <VisitorCounter />
         <ContactCta />
       </main>
       <Footer />
