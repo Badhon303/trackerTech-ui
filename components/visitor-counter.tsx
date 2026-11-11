@@ -11,15 +11,19 @@ export function VisitorCounter() {
   const [unavailable, setUnavailable] = React.useState(false);
 
   React.useEffect(() => {
-    let visitorId = window.localStorage.getItem("trackertech-visitor-id");
-    if (!visitorId) {
-      visitorId = window.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-      window.localStorage.setItem("trackertech-visitor-id", visitorId);
-    }
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Dhaka" }).format(new Date());
+    const previousDay = window.localStorage.getItem("trackertech-counted-day");
+    const hasLifetimeCount = window.localStorage.getItem("trackertech-counted-lifetime") === "true";
+    const incrementToday = previousDay !== today;
+    const incrementLifetime = !hasLifetimeCount;
+
+    if (incrementToday) window.localStorage.setItem("trackertech-counted-day", today);
+    if (incrementLifetime) window.localStorage.setItem("trackertech-counted-lifetime", "true");
+
     fetch("/api/visitors", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ visitorId }),
+      body: JSON.stringify({ incrementToday, incrementLifetime }),
       cache: "no-store",
     })
       .then(async (response) => {
@@ -27,13 +31,17 @@ export function VisitorCounter() {
         return response.json() as Promise<Counts>;
       })
       .then(setCounts)
-      .catch(() => setUnavailable(true));
+      .catch(() => {
+        if (incrementToday) window.localStorage.removeItem("trackertech-counted-day");
+        if (incrementLifetime) window.localStorage.removeItem("trackertech-counted-lifetime");
+        setUnavailable(true);
+      });
   }, []);
 
   const display = (value: number | undefined) => value?.toLocaleString() ?? "—";
   const stats = [
-    { label: "Unique visitors today", value: display(counts?.today), icon: Activity, hint: "Deduplicated by browser ID or public IP" },
-    { label: "Unique visitors lifetime", value: display(counts?.lifetime), icon: UsersRound, hint: "All-time total across visitors" },
+    { label: "Unique visitors today", value: display(counts?.today), icon: Activity, hint: "One count per browser · resets at Dhaka midnight" },
+    { label: "Unique visitors lifetime", value: display(counts?.lifetime), icon: UsersRound, hint: "One count per browser, across all time" },
   ];
 
   return (
@@ -52,7 +60,7 @@ export function VisitorCounter() {
         </div>
         <p className="mx-auto mt-5 flex max-w-4xl items-center justify-center gap-2 text-center text-xs text-muted-foreground">
           <Globe2 className="h-3.5 w-3.5 shrink-0" />
-          {unavailable ? "Shared visitor count is unavailable; check the Redis settings in the deployment environment." : "A random browser ID and a one-way hash of the public IP prevent repeat counts; no name or email is collected."}
+          {unavailable ? "Shared visitor count is temporarily unavailable." : "Counts are shared across visitors. This lightweight counter uses this browser's local storage; other browsers on the same network may count separately."}
         </p>
       </div>
     </section>
