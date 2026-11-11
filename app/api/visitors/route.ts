@@ -5,6 +5,8 @@ export const dynamic = "force-dynamic";
 
 const COUNTER_API = "https://countapi.mileshilliard.com/api/v1";
 const LIFETIME_KEY = "trackertech_ltd_unique_browsers_2026";
+// The shared counter already contains 3 visits; 75 brings the legacy total to 78.
+const LIFETIME_BASELINE = 75;
 
 function getDhakaDate() {
   const parts = new Intl.DateTimeFormat("en", {
@@ -28,11 +30,11 @@ async function counter(action: "get" | "hit", key: string) {
 
 async function readCounts() {
   const todayKey = `trackertech_ltd_unique_browsers_${getDhakaDate()}`;
-  const [today, lifetime] = await Promise.all([
+  const [today, lifetimeCount] = await Promise.all([
     counter("get", todayKey),
     counter("get", LIFETIME_KEY),
   ]);
-  return { today, lifetime };
+  return { today, lifetime: lifetimeCount + LIFETIME_BASELINE };
 }
 
 export async function GET() {
